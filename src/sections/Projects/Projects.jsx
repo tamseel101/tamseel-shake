@@ -1,8 +1,7 @@
 import styles from './ProjectsStyles.module.css';
-import viberr from '../../assets/viberr.png';
-import freshBurger from '../../assets/fresh-burger.png';
-import hipsster from '../../assets/hipsster.png';
-import fitLift from '../../assets/fitlift.png';
+import viberr from '../../assets/aibot.png';
+import hipsster from '../../assets/codenext.png';
+import fitLift from '../../assets/closetsort.png';
 import ProjectCard from '../../common/ProjectCard';
 
 function Projects() {
@@ -10,30 +9,26 @@ function Projects() {
     <section id="projects" className={styles.container}>
       <h1 className="sectionTitle">Projects</h1>
       <div className={styles.projectsContainer}>
-        <ProjectCard
-          src={viberr}
-          link="https://github.com/Ade-mir/company-landing-page-2"
-          h3="Viberr"
-          p="Streaming App"
-        />
-        <ProjectCard
-          src={freshBurger}
-          link="https://github.com/Ade-mir/company-landing-page-2"
-          h3="Fresh Burger"
-          p="Hamburger Restaurant"
-        />
+
         <ProjectCard
           src={hipsster}
-          link="https://github.com/Ade-mir/company-landing-page-2"
-          h3="Hipsster"
-          p="Glasses Shop"
+          link="https://github.com/tamseel101/CodeNext"
+          h3="CodeNext"
+          p="React, Django, SQL"
         />
         <ProjectCard
           src={fitLift}
-          link="https://github.com/Ade-mir/company-landing-page-2"
-          h3="FitLift"
-          p="Fitness App"
+          link="https://docs.google.com/presentation/d/1OWTu-lkhMzbbb-YCD7BUtreimhKw2wuF3gVKmG850kw/edit?usp=sharing"
+          h3="ClosetSort()"
+          p="UX/ UI"
         />
+          <ProjectCard
+          src={viberr}
+          link="https://github.com/tamseel101/interviewer_bot"
+          h3="Interviewer Bot"
+          p="React, JS, OpenAI"
+        />
+
       </div>
     </section>
   );

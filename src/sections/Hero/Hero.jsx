@@ -40,7 +40,7 @@ function Hero() {
           <br />
           Sheikh
         </h1>
-        <h2>Fullstack Developer</h2>
+        {/* <h2>Fullstack Developer</h2> */}
         <span>
           {/* <a href="https://twitter.com/" target="_blank">
             <img src={twitterIcon} alt="Twitter icon" />
@@ -52,10 +52,10 @@ function Hero() {
             <img src={linkedinIcon} alt="Linkedin icon" />
           </a>
         </span>
-        {/* <p className={styles.description}>
-          With a passion for developing modern React web apps for commercial
-          businesses.
-        </p> */}
+        <p className={styles.description}>
+        I am Tamseel, an undergraduate at the University of Toronto pursuing a Computer Science degree with minors in 
+        Mathematics and Professional Writing & Communication.
+        </p>
         <a href={CV} download>
           <button className="hover">Resume</button>
         </a>
