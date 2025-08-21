@@ -1,0 +1,79 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: var(--background-color);
+  max-width: 1200px; /* Reintroduce max-width */
+  width: 90%; /* Make it responsive */
+  margin: 20px auto; /* Center it with top margin */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 25px; /* Reintroduce rounded corners */
+}
+
+.link {
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  font-family: 'Rubik', sans-serif; /* Explicitly set for consistency */
+}
+
+.link:hover {
+  color: var(--btn-color);
+  text-decoration: none;
+}
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.iconLink {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.resumeButton {
+  background-color: var(--btn-color);
+  color: var(--btn-text-color);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1.2em; /* Changed from 0.9em */
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  font-family: 'Rubik', sans-serif; /* Added to match .link */
+}
+
+.resumeButton:hover {
+  background-color: var(--btn-text-color);
+  color: var(--btn-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.colorMode {
+  width: 25px;
+  cursor: pointer;
+}

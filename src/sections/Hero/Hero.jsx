@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import styles from './HeroStyles.module.css';
 import heroImg from '../../assets/tamseel.jpg';
 import sun from '../../assets/sun.svg';
@@ -10,8 +11,9 @@ import linkedinLight from '../../assets/linkedin-light.svg';
 import linkedinDark from '../../assets/linkedin-dark.svg';
 import CV from '../../assets/cv.pdf';
 import { useTheme } from '../../common/ThemeContext';
+import Typewriter from '../../common/Typewriter';
 
-function Hero() {
+function Hero({ id }) {
   const { theme, toggleTheme } = useTheme();
 
   const themeIcon = theme === 'light' ? sun : moon;
@@ -19,8 +21,10 @@ function Hero() {
   const githubIcon = theme === 'light' ? githubLight : githubDark;
   const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
 
+  const words = ["code", "videos", "bad decisions", "stuff"];
+
   return (
-    <section id="hero" className={styles.container}>
+    <section id={id} className={styles.container}>
       <div className={styles.colorModeContainer}>
         <img
           src={heroImg}
@@ -35,16 +39,14 @@ function Hero() {
         />
       </div>
       <div className={styles.info}>
-        <h1>
+        <h1 className={styles.name}>
           Tamseel
           <br />
           Sheikh
         </h1>
-        {/* <h2>Fullstack Developer</h2> */}
+        <h2 className={styles.tagline}>I make:</h2>
+        <Typewriter words={words} className={styles.typewriterText} />
         <span>
-          {/* <a href="https://twitter.com/" target="_blank">
-            <img src={twitterIcon} alt="Twitter icon" />
-          </a> */}
           <a href="https://github.com/tamseel101" target="_blank" rel="noreferrer">
             <img src={githubIcon} alt="Github icon" />
           </a>
@@ -53,10 +55,6 @@ function Hero() {
             <img src={linkedinIcon} alt="Linkedin icon" />
           </a>
         </span>
-        <p className={styles.description}>
-        I am Tamseel, an undergraduate at the University of Toronto pursuing a Computer Science degree with minors in 
-        Mathematics and Professional Writing & Communication.
-        </p>
         <a href={CV} download>
           <button className="hover">Resume</button>
         </a>

@@ -4,53 +4,98 @@
   justify-content: center;
   gap: 20px;
   text-align: center;
-  height: 100dvh;
+  height: 100vh; /* Use vh for full viewport height */
   min-height: 500px;
+  padding-top: 80px; /* Add padding to account for fixed header */
+}
 
-  .hero {
-    max-width: 200px;
-  }
+.hero {
+  max-width: 200px;
+}
 
-  span {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Reduce gap slightly */
+}
 
-    a {
-      margin: 0;
+.info h1 {
+  margin-bottom: 5px; /* Adjust margin for h1 */
+}
 
-      img {
-        width: 30px;
-      }
-    }
-  }
+.tagline {
+  margin-top: 0;
+  font-size: 1em; /* Match p font size */
+  font-weight: 300; /* Match p font weight */
+  min-height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-  a {
-    width: fit-content;
-    align-self: center;
-  }
+.typewriterText {
+  font-size: 1em; /* Match p font size */
+  font-weight: 300; /* Match p font weight */
+  min-height: 2em;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--text-color); /* Explicitly set text color to ensure it works with dark/light mode */
+  font-family: 'Rubik', sans-serif; /* Added to ensure Rubik font */
+}
 
-  button {
-    background-color: var(--btn-color);
-    color: var(--btn-text-color);
-    border: none;
-    border-radius: 20px;
-    width: 126px;
-    height: 50px;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
-  }
+.cursor {
+  display: inline-block;
+  width: 1px;
+  background-color: var(--text-color);
+  margin-left: 2px; /* Adjust as needed */
+  animation: blink 0.7s infinite;
+}
 
-  button:hover {
-    transform: scale(1.05);
-  }
+@keyframes blink {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
 
-  button:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-  }
+.info span {
+  display: flex;
+  gap: 15px; /* Reduced gap */
+  justify-content: center; /* Ensure always centered */
+  width: 100%;
+}
+
+.info a {
+  width: fit-content;
+  align-self: center;
+}
+
+.info img {
+  width: 40px; /* Slightly smaller icons for better balance */
+  height: 40px;
+}
+
+.info button {
+  background-color: var(--btn-color);
+  color: var(--btn-text-color);
+  border: none;
+  border-radius: 20px;
+  width: 126px;
+  height: 50px;
+  font-size: 1em; /* Adjusted to match p font size */
+  font-weight: 300; /* Adjusted to match p font weight */
+  font-family: 'Rubik', sans-serif; /* Explicitly set to Rubik */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.info button:hover {
+  transform: scale(1.05);
+}
+
+.info button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 .colorModeContainer {
@@ -67,26 +112,26 @@
   cursor: pointer;
 }
 
-.description {
-  max-width: 24ch;
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
 @media (width >= 800px) {
   .container {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-evenly;
+    padding-top: 0;
+  }
 
-    .hero {
-      max-width: 350px;
-      width: 350px;
-    }
+  .hero {
+    max-width: 350px;
+    width: 350px;
+  }
+
+  .info {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .info span {
+    /* Removed justify-content: flex-start to keep it centered */
   }
 }
 

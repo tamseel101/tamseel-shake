@@ -2,40 +2,126 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-
-  img {
-    width: 250px; /* Set a fixed width */
-    height: 250px; /* Set a fixed height */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
-    align-self: center;
-    background-color: var(--project-card-bg);
-    border-radius: 20px;
-  }
-
-  a {
-    width: fit-content;
-    text-decoration: none;
-    color: #222;
-    transition: transform 200ms ease-in-out;
-  }
-
-  a:hover {
-    transform: scale(1.05);
-  }
 }
 
 .projectsContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 60px;
+}
+
+.projectItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--project-card-bg); /* Use theme background for card */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px var(--box-shadow-color, rgba(0, 0, 0, 0.1)); /* Use theme-aware shadow */
+  max-width: 900px;
+  width: 90%;
+  gap: 20px;
+}
+
+.projectLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.projectImageLink {
+  width: fit-content;
+}
+
+.projectImage {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.projectTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color); /* Use theme text color */
+  font-family: 'Rubik', sans-serif; /* Explicitly set for consistency */
+}
+
+.projectRight {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 15px;
+}
+
+.projectDescription {
+  line-height: 1.6;
+  font-size: 1em;
+  color: var(--text-color); /* Use theme text color */
+  font-family: 'Rubik', sans-serif; /* Explicitly set for consistency */
+}
+
+.projectButtons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.projectButtons button {
+  background-color: var(--btn-color);
+  color: var(--btn-text-color);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 4px var(--box-shadow-color, rgba(0, 0, 0, 0.2)); /* Use theme-aware shadow */
+  transition: all 0.3s ease;
+  font-family: 'Rubik', sans-serif; /* Explicitly set for consistency */
+}
+
+.projectButtons button:hover {
+  background-color: var(--btn-text-color);
+  color: var(--btn-color);
+  box-shadow: 0 4px 8px var(--box-shadow-color-hover, rgba(0, 0, 0, 0.3)); /* Use theme-aware shadow */
+  transform: translateY(-2px);
 }
 
 @media (width >= 800px) {
-  .projectsContainer {
+  .projectItem {
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 0 30px;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 40px;
+  }
+
+  .projectItem:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .projectLeft {
+    flex-shrink: 0;
+    width: 200px;
+  }
+
+  .projectImage {
+    width: 150px;
+    height: 150px;
+  }
+
+  .projectRight {
+    flex-grow: 1;
+  }
+
+  .projectButtons {
+    justify-content: flex-start;
   }
 }

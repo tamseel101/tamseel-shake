@@ -1,12 +1,29 @@
 import React from 'react';
+import styles from '../sections/Projects/ProjectsStyles.module.css'; // Import styles directly
 
-function ProjectCard({ src, link, h3, p }) {
+function ProjectCard({ src, link, h3, p, detailsLink, githubLink }) {
   return (
-    <a href={link} target="_blank">
-      <img className="hover" src={src} alt={`${h3} logo`} />
-      <h3>{h3}</h3>
-      <p>{p}</p>
-    </a>
+    <div className={styles.projectItem}>
+      <div className={styles.projectLeft}>
+        <a href={link} target="_blank" rel="noreferrer" className={styles.projectImageLink}>
+          <img src={src} alt={`${h3} logo`} className={styles.projectImage} />
+        </a>
+        <h3 className={styles.projectTitle}>{h3}</h3>
+      </div>
+      <div className={styles.projectRight}>
+        <p className={styles.projectDescription}>{p}</p>
+        <div className={styles.projectButtons}>
+          <a href={detailsLink} target="_blank" rel="noreferrer">
+            <button className="hover">View Details</button>
+          </a>
+          {githubLink && (
+            <a href={githubLink} target="_blank" rel="noreferrer">
+              <button className="hover">GitHub</button>
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }
 
