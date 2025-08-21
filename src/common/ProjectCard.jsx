@@ -1,4 +1,4 @@
-import styles from './ProjectCardStyles.module.css';
+import styles from '../sections/Projects/ProjectsStyles.module.css';
 
 // eslint-disable-next-line react/prop-types
 function ProjectCard({ src, link, h3, p, detailsLink, githubLink }) {
