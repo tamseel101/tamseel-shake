@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import styles from './HeroStyles.module.css';
 import heroImg from '../../assets/tamseel.jpg';
 import sun from '../../assets/sun.svg';
@@ -13,11 +12,11 @@ import CV from '../../assets/cv.pdf';
 import { useTheme } from '../../common/ThemeContext';
 import Typewriter from '../../common/Typewriter';
 
+// eslint-disable-next-line react/prop-types
 function Hero({ id }) {
   const { theme, toggleTheme } = useTheme();
 
   const themeIcon = theme === 'light' ? sun : moon;
-  const twitterIcon = theme === 'light' ? twitterLight : twitterDark;
   const githubIcon = theme === 'light' ? githubLight : githubDark;
   const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
 

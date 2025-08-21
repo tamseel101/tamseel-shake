@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './HeaderStyles.module.css';
 import CV from '../assets/cv.pdf';
 import githubLight from '../assets/github-light.svg';

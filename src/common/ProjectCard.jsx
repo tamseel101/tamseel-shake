@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from '../sections/Projects/ProjectsStyles.module.css'; // Import styles directly
+import styles from './ProjectCardStyles.module.css';
 
+// eslint-disable-next-line react/prop-types
 function ProjectCard({ src, link, h3, p, detailsLink, githubLink }) {
   return (
     <div className={styles.projectItem}>

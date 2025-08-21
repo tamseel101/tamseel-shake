@@ -1,17 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
+// eslint-disable-next-line react/prop-types
 function Typewriter({ words, className }) {
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [reverse, setReverse] = useState(false);
 
   // Handle empty words array
-  if (!words || words.length === 0) {
-    return <span></span>; // Or return null, or a default message
-  }
+  // The useEffect hook should not be conditional, so this early return is removed.
+  // if (!words || words.length === 0) {
+  //   return <span></span>; // Or return null, or a default message
+  // }
 
   // Type out words
   useEffect(() => {
+    if (!words || words.length === 0) return; // Handle empty words array inside useEffect
+
     if (subIndex === words[index].length + 1 && !reverse) {
       setReverse(true);
       return;
