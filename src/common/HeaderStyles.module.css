@@ -1,79 +1,464 @@
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background-color: var(--background-color);
-  max-width: 1200px; /* Reintroduce max-width */
-  width: 90%; /* Make it responsive */
-  margin: 20px auto; /* Center it with top margin */
+/* Apple-inspired Header Styles */
+.header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  border-radius: 25px; /* Reintroduce rounded corners */
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.link {
-  color: var(--text-color);
-  text-decoration: none;
-  margin: 0 20px;
-  font-size: 1.2em;
-  font-weight: bold;
-  transition: color 0.3s ease;
-  font-family: 'Rubik', sans-serif; /* Explicitly set for consistency */
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.link:hover {
-  color: var(--btn-color);
-  text-decoration: none;
+/* Dark theme styles */
+[data-theme='dark'] .header {
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.socialLinks {
+[data-theme='dark'] .header.scrolled {
+  background: rgba(0, 0, 0, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.headerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  justify-content: space-between;
 }
 
-.iconLink {
+/* Brand/Logo */
+.brand {
+  flex-shrink: 0;
+}
+
+.brandLink {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.tamseel {
+  background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.sheikh {
+  color: #000000;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .tamseel {
+  background: linear-gradient(135deg, #0A84FF 0%, #5E5CE6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme='dark'] .sheikh {
+  color: #F5F5F7;
+}
+
+.brandLink:hover .tamseel {
+  background: linear-gradient(135deg, #000000 0%, #000000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.brandLink:hover .sheikh {
+  background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme='dark'] .brandLink:hover .tamseel {
+  background: linear-gradient(135deg, #F5F5F7 0%, #F5F5F7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme='dark'] .brandLink:hover .sheikh {
+  background: linear-gradient(135deg, #0A84FF 0%, #5E5CE6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: block;
+  }
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 32px;
+}
+
+.navItem {
+  margin: 0;
+}
+
+.navLink {
+  color: #000000;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 400;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+[data-theme='dark'] .navLink {
+  color: #F5F5F7;
+}
+
+.navLink:hover {
+  color: #007AFF;
+}
+
+[data-theme='dark'] .navLink:hover {
+  color: #0A84FF;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #007AFF;
+  transition: width 0.2s ease;
+}
+
+[data-theme='dark'] .navLink::after {
+  background: #0A84FF;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* Desktop Actions */
+.desktopActions {
+  display: none;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  .desktopActions {
+    display: flex;
+  }
+}
+
+.themeToggle {
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.icon {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease;
+.themeToggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-.icon:hover {
-  transform: scale(1.1);
+[data-theme='dark'] .themeToggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.themeToggle img {
+  width: 20px;
+  height: 20px;
 }
 
 .resumeButton {
-  background-color: var(--btn-color);
-  color: var(--btn-text-color);
+  background: none;
+  color: #000000;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 400;
+  transition: color 0.2s ease;
   border: none;
-  border-radius: 20px;
-  padding: 10px 20px;
-  font-size: 1.2em; /* Changed from 0.9em */
-  font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  font-family: 'Rubik', sans-serif; /* Added to match .link */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  position: relative;
+}
+
+[data-theme='dark'] .resumeButton {
+  color: #F5F5F7;
 }
 
 .resumeButton:hover {
-  background-color: var(--btn-text-color);
-  color: var(--btn-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transform: translateY(-2px);
+  color: #007AFF;
 }
 
-.colorMode {
-  width: 25px;
+[data-theme='dark'] .resumeButton:hover {
+  color: #0A84FF;
+}
+
+.resumeButton::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #007AFF;
+  transition: width 0.2s ease;
+}
+
+[data-theme='dark'] .navLink::after {
+  background: #0A84FF;
+}
+
+.resumeButton:hover::after {
+  width: 100%;
+}
+
+.socialLink {
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialLink:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .socialLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.socialLink img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.socialLink:hover img {
+  transform: scale(1.1);
+}
+
+/* Mobile Menu Button */
+.mobileMenuButton {
+  display: block;
+  background: none;
+  border: none;
+  padding: 8px;
   cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+@media (min-width: 1024px) {
+  .mobileMenuButton {
+    display: none;
+  }
+}
+
+.mobileMenuButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .mobileMenuButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 20px;
+  height: 2px;
+  background: #000000;
+  transition: all 0.3s ease;
+  border-radius: 1px;
+}
+
+[data-theme='dark'] .hamburger span {
+  background: #F5F5F7;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  animation: slideDown 0.3s ease;
+}
+
+[data-theme='dark'] .mobileMenu {
+  background: rgba(0, 0, 0, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobileNav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+
+.mobileNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.mobileNavItem {
+  margin: 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+.mobileNavLink,
+.mobileThemeToggle,
+.mobileResumeButton,
+.mobileSocialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  text-decoration: none;
+  color: #000000;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+[data-theme='dark'] .mobileNavLink,
+[data-theme='dark'] .mobileThemeToggle,
+[data-theme='dark'] .mobileResumeButton,
+[data-theme='dark'] .mobileSocialLink {
+  color: #F5F5F7;
+}
+
+.mobileNavLink:hover,
+.mobileThemeToggle:hover,
+.mobileResumeButton:hover,
+.mobileSocialLink:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .mobileNavLink:hover,
+[data-theme='dark'] .mobileThemeToggle:hover,
+[data-theme='dark'] .mobileResumeButton:hover,
+[data-theme='dark'] .mobileSocialLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobileThemeToggle img,
+.mobileSocialLink img {
+  width: 20px;
+  height: 20px;
+}
+
+.mobileResumeButton {
+  background: none;
+  color: #000000;
+  justify-content: center;
+}
+
+[data-theme='dark'] .mobileResumeButton {
+  color: #F5F5F7;
+}
+
+.mobileResumeButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .mobileResumeButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }

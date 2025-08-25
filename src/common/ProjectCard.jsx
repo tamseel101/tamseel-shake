@@ -6,19 +6,19 @@ function ProjectCard({ src, link, h3, p, detailsLink, githubLink }) {
     <div className={styles.projectItem}>
       <div className={styles.projectLeft}>
         <a href={link} target="_blank" rel="noreferrer" className={styles.projectImageLink}>
-          <img src={src} alt={`${h3} logo`} className={styles.projectImage} />
+          <img src={src} alt={`${h3} project screenshot`} className={styles.projectImage} />
         </a>
-        <h3 className={styles.projectTitle}>{h3}</h3>
       </div>
       <div className={styles.projectRight}>
+        <h3 className={styles.projectTitle}>{h3}</h3>
         <p className={styles.projectDescription}>{p}</p>
         <div className={styles.projectButtons}>
           <a href={detailsLink} target="_blank" rel="noreferrer">
-            <button className="hover">View Details</button>
+            <button className={styles.projectButton}>View Details</button>
           </a>
           {githubLink && (
             <a href={githubLink} target="_blank" rel="noreferrer">
-              <button className="hover">GitHub</button>
+              <button className={styles.projectButtonSecondary}>GitHub</button>
             </a>
           )}
         </div>

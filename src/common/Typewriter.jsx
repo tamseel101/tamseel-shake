@@ -7,14 +7,8 @@ function Typewriter({ words, className }) {
   const [reverse, setReverse] = useState(false);
 
   // Handle empty words array
-  // The useEffect hook should not be conditional, so this early return is removed.
-  // if (!words || words.length === 0) {
-  //   return <span></span>; // Or return null, or a default message
-  // }
-
-  // Type out words
   useEffect(() => {
-    if (!words || words.length === 0) return; // Handle empty words array inside useEffect
+    if (!words || words.length === 0) return;
 
     if (subIndex === words[index].length + 1 && !reverse) {
       setReverse(true);
@@ -34,7 +28,16 @@ function Typewriter({ words, className }) {
     return () => clearTimeout(timeout);
   }, [subIndex, index, reverse, words]);
 
-  return <span className={className}>{`${words[index].substring(0, subIndex)}`}<span className="cursor">|</span></span>;
+  if (!words || words.length === 0) {
+    return <span className={className}>Developer</span>;
+  }
+
+  return (
+    <span className={className}>
+      {`${words[index].substring(0, subIndex)}`}
+      <span className="typewriter-cursor">|</span>
+    </span>
+  );
 }
 
 export default Typewriter;

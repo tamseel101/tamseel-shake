@@ -1,82 +1,130 @@
-.container {
+/* Apple-inspired Contact Styles */
+.contact {
+  padding: 120px 0;
+  background: white;
+  position: relative;
+}
+
+[data-theme='dark'] .contact {
+  background: #2d2d30;
+}
+
+.contactContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.contactInfo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .contactInfo {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+  }
+}
+
+.contactMethod {
+  text-align: center;
+  padding: 32px 24px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+[data-theme='dark'] .contactMethod {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contactMethod:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .contactMethod:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.contactMethodTitle {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0 0 16px 0;
   text-align: center;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+[data-theme='dark'] .contactMethodTitle {
+  color: #f5f5f7;
 }
 
-textarea,
-input:not([type='submit']) {
-  height: 50px;
-  padding-left: 16px;
-  width: 250px;
+.contactMethodLink {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #007AFF;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  text-align: center;
 }
 
-textarea {
-  padding-top: 16px;
-  resize: none;
-  height: 250px;
+[data-theme='dark'] .contactMethodLink {
+  color: #0A84FF;
 }
 
-input,
-textarea {
-  border-radius: 20px;
-  border: #888 1px solid;
-  box-sizing: border-box;
-  justify-self: center;
-  background-color: var(--background-color);
-  color: var(--form-text-color);
-  font-family: 'Rubik', sans-serif; /* Explicitly set for consistency */
+.contactMethodLink:hover {
+  color: #0056CC;
 }
 
-::placeholder {
-  color: var(--form-text-color);
-  font-family: 'Rubik', sans-serif; /* Explicitly set for consistency */
+[data-theme='dark'] .contactMethodLink:hover {
+  color: #409CFF;
 }
 
-input[type='submit'] {
-  background-color: var(--btn-color);
-  color: var(--btn-text-color);
-  border: none;
-  border-radius: 20px;
-  width: 126px;
-  height: 50px;
-  font-size: 20px;
-  font-weight: bold;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
-  margin: auto;
-  font-family: 'Rubik', sans-serif; /* Explicitly set for consistency */
+.contactMethodText {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #86868b;
+  margin: 0;
+  text-align: center;
 }
 
-input[type='submit']:hover {
-  transform: scale(1.05);
+[data-theme='dark'] .contactMethodText {
+  color: #a1a1a6;
 }
 
-input[type='submit']:active {
-  transform: translateY(2px);
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-}
-
-@media (width >= 800px) {
-  textarea,
-  input:not([type='submit']) {
-    width: 600px;
-    font-size: 20px;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact {
+    padding: 80px 0;
   }
-  form {
-    gap: 40px;
+  
+  .contactInfo {
+    gap: 32px;
+  }
+  
+  .contactMethod {
+    padding: 24px 20px;
   }
 }
 
-@media (width >= 1400px) {
-  textarea,
-  input:not([type='submit']) {
-    width: 800px;
+@media (max-width: 480px) {
+  .contact {
+    padding: 60px 0;
   }
 }
+

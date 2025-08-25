@@ -2,45 +2,31 @@ import styles from './ContactStyles.module.css';
 
 function Contact() {
   return (
-    <section id="contact" className={styles.container}>
-      <h1 className="sectionTitle">Contact</h1>
-      <form action="">
-        <div className="formGroup">
-          <label htmlFor="name" hidden>
-            Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Name"
-            required
-          />
+    <section id="contact" className={styles.contact}>
+      <div className={styles.contactContainer}>
+        <div className={styles.contactInfo}>
+          <div className={styles.contactMethod}>
+            <h3 className={styles.contactMethodTitle}>Email</h3>
+            <a href="mailto:your.email@example.com" className={styles.contactMethodLink}>
+              your.email@example.com
+            </a>
+          </div>
+          
+          <div className={styles.contactMethod}>
+            <h3 className={styles.contactMethodTitle}>Location</h3>
+            <p className={styles.contactMethodText}>
+              Toronto, Ontario, Canada
+            </p>
+          </div>
+          
+          <div className={styles.contactMethod}>
+            <h3 className={styles.contactMethodTitle}>Available For</h3>
+            <p className={styles.contactMethodText}>
+              Full-time opportunities, Freelance projects, Open source contributions
+            </p>
+          </div>
         </div>
-        <div className="formGroup">
-          <label htmlFor="email" hidden>
-            Email
-          </label>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            placeholder="Email"
-            required
-          />
-        </div>
-        <div className="formGroup">
-          <label htmlFor="message" hidden>
-            Message
-          </label>
-          <textarea
-            name="message"
-            id="message"
-            placeholder="Message"
-            required></textarea>
-        </div>
-        <input className="hover btn" type="submit" value="Submit" />
-      </form>
+      </div>
     </section>
   );
 }

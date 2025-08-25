@@ -2,12 +2,27 @@ import styles from './FooterStyles.module.css';
 
 function Footer() {
   return (
-    <section id="footer" className={styles.container}>
-      <p>
-        &copy; 2025 Tamseel Sheikh. <br />
-        {/* All rights reserved. */}
-      </p>
-    </section>
+    <footer id="footer" className={styles.footer}>
+      <div className={styles.footerContainer}>
+        <div className={styles.footerContent}>
+          <div className={styles.footerBrand}>
+            <h3 className={styles.footerBrandName}>
+              <span className={styles.footerFirstName}>Tamseel</span>
+              <span className={styles.footerLastName}>Sheikh</span>
+            </h3>
+            <p className={styles.footerTagline}>
+              Building digital experiences that matter
+            </p>
+          </div>
+        </div>
+        
+        <div className={styles.footerBottom}>
+          <div className={styles.footerCopyright}>
+            <p>&copy; 2025 Tamseel Sheikh. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }
 
