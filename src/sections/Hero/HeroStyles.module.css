@@ -134,37 +134,41 @@
 }
 
 .resumeButton {
-  background: #007AFF;
-  color: white;
+  background: rgba(0, 122, 255, 0.08);
+  color: #007AFF;
   text-decoration: none;
-  padding: 16px 32px;
+  padding: 12px 24px;
   border-radius: 25px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: none;
+  border: 1px solid rgba(0, 122, 255, 0.2);
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0, 122, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 122, 255, 0.1);
   display: inline-block;
   text-align: center;
-  min-width: 180px;
+  min-width: 140px;
 }
 
 [data-theme='dark'] .resumeButton {
-  background: #0A84FF;
-  box-shadow: 0 4px 16px rgba(10, 132, 255, 0.3);
+  background: rgba(10, 132, 255, 0.15);
+  color: #0A84FF;
+  border: 1px solid rgba(10, 132, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(10, 132, 255, 0.2);
 }
 
 .resumeButton:hover {
-  background: #0056CC;
+  background: rgba(0, 122, 255, 0.15);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 122, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 122, 255, 0.2);
+  border-color: rgba(0, 122, 255, 0.4);
 }
 
 [data-theme='dark'] .resumeButton:hover {
-  background: #409CFF;
-  box-shadow: 0 8px 24px rgba(10, 132, 255, 0.4);
+  background: rgba(10, 132, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(10, 132, 255, 0.3);
+  border-color: rgba(10, 132, 255, 0.5);
 }
 
 .socialLinks {
@@ -181,25 +185,43 @@
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: rgba(0, 0, 0, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+/* GitHub in light mode */
+.githubLink {
+  background: rgba(128, 0, 128, 0.08); /* Subtle purple tint for GitHub in light mode */
+  border: 1px solid rgba(128, 0, 128, 0.15);
+}
+
+.githubLink:hover {
+  background: rgba(128, 0, 128, 0.15); /* Darker purple on hover */
+  box-shadow: 0 8px 24px rgba(128, 0, 128, 0.15);
+  border-color: rgba(128, 0, 128, 0.3);
+}
+
+/* LinkedIn in light mode */
+.linkedinLink {
+  background: rgba(10, 102, 194, 0.1); /* Subtle LinkedIn blue tint in light mode */
+  border: 1px solid rgba(10, 102, 194, 0.2);
+}
+
+.linkedinLink:hover {
+  background: rgba(10, 102, 194, 0.2); /* Darker blue on hover */
+  box-shadow: 0 8px 24px rgba(10, 102, 194, 0.15);
+  border-color: rgba(10, 102, 194, 0.4);
+}
+
+/* Override for dark theme to keep social links neutral */
 [data-theme='dark'] .socialLink {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.socialLink:hover {
-  background: rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
 [data-theme='dark'] .socialLink:hover {
   background: rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .socialLink img {

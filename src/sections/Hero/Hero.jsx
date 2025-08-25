@@ -32,14 +32,14 @@ function Hero({ id }) {
             </div>
             <div className={styles.heroActions}>
               <a href={CV} download className={styles.resumeButton}>
-                Download Resume
+                Resume
               </a>
               <div className={styles.socialLinks}>
                 <a 
                   href="https://github.com/tamseel101" 
                   target="_blank" 
                   rel="noreferrer"
-                  className={styles.socialLink}
+                  className={`${styles.socialLink} ${styles.githubLink}`}
                   aria-label="GitHub Profile"
                 >
                   <img src={githubIcon} alt="GitHub" />
@@ -48,7 +48,7 @@ function Hero({ id }) {
                   href="https://www.linkedin.com/in/tamseelsheikh/" 
                   target="_blank" 
                   rel="noreferrer"
-                  className={styles.socialLink}
+                  className={`${styles.socialLink} ${styles.linkedinLink}`}
                   aria-label="LinkedIn Profile"
                 >
                   <img src={linkedinIcon} alt="LinkedIn" />

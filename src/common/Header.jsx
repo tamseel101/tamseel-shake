@@ -15,7 +15,7 @@ const routes = [
     href: '#projects',
   },
   {
-    title: 'Email Me',
+    title: 'Contact',
     href: 'mailto:your.email@example.com',
   },
 ];
