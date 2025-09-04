@@ -11,7 +11,7 @@ function Footer() {
               <span className={styles.footerLastName}>Sheikh</span>
             </h3>
             <p className={styles.footerTagline}>
-              Building digital experiences that matter
+              You miss 100% of the shots you don’t take. – Wayne Gretzky – Michael Scott
             </p>
           </div>
         </div>
