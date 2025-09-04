@@ -7,8 +7,8 @@ function Contact() {
         <div className={styles.contactInfo}>
           <div className={styles.contactMethod}>
             <h3 className={styles.contactMethodTitle}>Email</h3>
-            <a href="mailto:your.email@example.com" className={styles.contactMethodLink}>
-              your.email@example.com
+            <a href="mailto:tamseel.sheikh@mail.utoronto.ca" className={styles.contactMethodLink}>
+              tamseel.sheikh@mail.utoronto.ca
             </a>
           </div>
           
@@ -19,12 +19,6 @@ function Contact() {
             </p>
           </div>
           
-          <div className={styles.contactMethod}>
-            <h3 className={styles.contactMethodTitle}>Available For</h3>
-            <p className={styles.contactMethodText}>
-              Full-time opportunities, Freelance projects, Open source contributions
-            </p>
-          </div>
         </div>
       </div>
     </section>
