@@ -20,7 +20,7 @@ function Projects() {
             src={hipsster}
             link="https://github.com/tamseel101/CodeNext"
             h3="CodeNext"
-            p="Learning. Networking. Growing. You can do all of these at once on Baobab, a educational social media site built for entrepreneurs. We wrote a full stack web application with a built in educational system, including assignment deliverables, real-time discussion boards, and user profiles to encourage networking. I worked as a full stack developer and founder, writing front-end and back-end code, and communicating with the product team to ensure the platform matched what our client wanted. Click the icon to check out our repo!"
+            p="CodeNext customizes your Leetcode plan, schedules daily tasks, tracks progress, and sends reminders for efficient interview prep."
             detailsLink="https://github.com/tamseel101/CodeNext"
             githubLink="https://github.com/tamseel101/CodeNext"
           />
