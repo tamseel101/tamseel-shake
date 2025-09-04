@@ -38,7 +38,7 @@ function Projects() {
             src={viberr}
             link="https://github.com/tamseel101/interviewer_bot"
             h3="Interviewer Bot"
-            p="TLDR: Ontario's covid reponse app was so bad, even a group of kids competing in UTM's Hack The Case Hackathon/Case Competition hybrid could write a better one in three days. We used Next.js for the front end, and firebase for the back end. My focus was on the front end and presentation. We ended up taking home first place! Click the image to check out our devpost page!"
+            p="Powered by OpenAI and the Web Speech API, the Recruiter Bot conducts interviews by asking questions and providing recommended answers."
             detailsLink="https://github.com/tamseel101/interviewer_bot"
             githubLink="https://github.com/tamseel101/interviewer_bot"
           />
