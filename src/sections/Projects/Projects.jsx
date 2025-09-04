@@ -29,7 +29,7 @@ function Projects() {
             src={fitLift}
             link="https://docs.google.com/presentation/d/1OWTu-lkhMzbbb-YCD7BUtreimhKw2wuF3gVKmG850kw/edit?usp=sharing"
             h3="ClosetSort()"
-            p="Learning shouldn't be confined by borders. We utilized blockchain technology to create our own cryptocurrency that can be used by students and tutors on our very own e-learning platform, which was created as a project for TOHacks 2021! I coded the cryptocurrency, and used chakra-ui to create a responsive and dynamic site. Click the image to check out our devpost page!"
+            p="ClosetSort is a smart wardrobe management app designed to simplify outfit planning and promote sustainable fashion habits. The high-fidelity prototype showcases an intuitive interface where users can scan or upload images of their clothing to build a digital closet. The app automatically categorizes wardrobe items and uses AI to suggest outfit combinations tailored to weather, occasion, and personal style."
             detailsLink="https://docs.google.com/presentation/d/1OWTu-lkhMzbbb-YCD7BUtreimhKw2wuF3gVKmG850kw/edit?usp=sharing"
             githubLink="https://github.com/tamseel101/TOHacks-2021"
           />
